@@ -56,7 +56,6 @@ def main():
         else:
             worm.pop(0) # 사과를 먹지 않은 경우 과거의 위치를 제거하고 현재 위치 추가.
             worm.append((i, j))
-        print(worm)
 
     print(cnt) # 이동 횟수 print
 
