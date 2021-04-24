@@ -52,7 +52,6 @@ def main():
                 groupId -= 1
 
     # 섬 별로 grouping
-
     ans = sys.maxsize
     for id in range(-1, groupId, -1):
         island = deque()
