@@ -14,7 +14,7 @@ def main():
     result = 1
 
     for i in range(1, len(score)):
-        if score[i][0] > firstSubGrade and score[i][1] < secondSubGrade:    # 첫 번째 과목의 둥수가 1등보다 낮지만 두 번째 과목의 등수가 1등보다 높으면 Count.
+        if score[i][0] > firstSubGrade and score[i][1] < secondSubGrade:    # 첫 번째 과목의 둥수가 1등보다 낮지만 두 번째 과목의 등수가 1등보다 높으면 count.
             firstSubGrade = score[i][0]
             secondSubGrade = score[i][1]   # 기준을 다시 잡는다.
             result += 1
