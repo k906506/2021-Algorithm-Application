@@ -14,7 +14,7 @@ def selectSort(numbers): # 순회하면서 가장 작은 원소랑 위치 변경
     print("[선택 정렬] 정렬 후 : ", str(numbers))
 
 
-def insertSort(numbers): # 순회하면서 이전 원소와 위치 변경
+def insertSort(numbers): # 순회하면서 이전 원소와 크기 비교
     print("[삽입 정렬] 정렬 전 : ", str(numbers))
 
     for i in range(1, len(numbers)):
@@ -23,7 +23,7 @@ def insertSort(numbers): # 순회하면서 이전 원소와 위치 변경
                 temp = numbers[j - 1]
                 numbers[j - 1] = numbers[j]
                 numbers[j] = temp
-            else:
+            else: # 이전 값이 더 작으면 순회 필요 없음.
                 break
 
     print("[삽입 정렬] 정렬 후 : ", str(numbers))
