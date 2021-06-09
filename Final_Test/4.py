@@ -1,3 +1,7 @@
+# import bisect from bisect_left, bisect_right
+# bisect_left(array, x, y)
+# bisect_right(array, x, y)
+
 def bisect_left(arr, value, begin, end):
     if begin >= end:
         return begin
