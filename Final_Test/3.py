@@ -31,25 +31,19 @@ def insertSort(numbers):  # 순회하면서 이전 원소와 크기 비교
     print("")
 
 
-def quickSort(numbers, start, finish):
-    if start >= finish:
-        return
-    pivot = start
-    left = start + 1
-    right = finish
-    while left <= right:
-        while left <= finish and numbers[left] <= numbers[pivot]:
-            left += 1
-        while right >= start and numbers[right] >= numbers[pivot]:
-            right -= 1
-        if left > right:
-            numbers[right], numbers[pivot] = numbers[pivot], numbers[right]
+def quickSort(numbers):
+    if len(numbers) <= 1:
+        return numbers
+    pivot = numbers[len(numbers) // 2]
+    smallers, equals, biggers = [], [], []
+    for element in numbers:
+        if element < pivot:
+            smallers.append(element)
+        elif element > pivot:
+            biggers.append(element)
         else:
-            numbers[left], numbers[right] = numbers[right], numbers[left]
-
-    quickSort(numbers, start, right - 1)
-    quickSort(numbers, right + 1, finish)
-
+            equals.append(element)
+    return quickSort(smallers) + equals + quickSort(biggers)
 
 
 def main():
@@ -61,7 +55,8 @@ def main():
     insertSort(another_numbers)
 
     another_numbers = numbers.copy()
-    quickSort(another_numbers, 0, len(numbers) - 1)
+    print("[퀵 소트] 정렬 후 : ", end = "")
+    print(quickSort(another_numbers))
 
 
 if __name__ == "__main__":
